@@ -13,6 +13,8 @@ This module will be responsible for communicating with emulators to running memo
 
 
 # Requirements
+- Must be operatable interactively, through an API, and via the console.
+- Analysis requests can be passed in lists, or an analysis can be requested on-the-fly interactively or through command line.
 - Should be able to deduct whether the structure bases passed, and whether the sizes of those structuers passed are accurate. If not, they must inform the user.
 - This manager manages its own project structure, where it outputs all of its memory scans in the form of header files. It can merge different structs together, or it can always generate new files, these modes will be configurable and overridable.
 - Once a memory block is scanned, All detected structures will be generated and then hashed. If A hash is found to 95% match the current detected structure in memory, the game code that accessed both structures are compared. If that matches 95%, then both outputs are merged into one, and it is noted of in the file. If the 95% tests fail, a new file is created for the newly analyzed struct.
